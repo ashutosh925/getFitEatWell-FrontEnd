@@ -30,6 +30,7 @@ import {
   drop as dropAction,
   lift as liftAction,
   type LiftArgs as LiftActionArgs,
+  flush,
 } from '../../state/action-creators';
 import type {
   Registry,
@@ -206,7 +207,7 @@ function tryStart({
     }
   }
 
-  const tryDispatchWhenDragging = tryDispatch.bind(this, 'DRAGGING');
+  const tryDispatchWhenDragging = tryDispatch.bind(null, 'DRAGGING');
 
   type LiftArgs = {|
     liftActionArgs: LiftActionArgs,
@@ -450,7 +451,20 @@ export default function useSensorMarshal({
     [registry.draggable],
   );
 
-  const tryReleaseLock = useCallback(lockAPI.tryAbandon, [lockAPI]);
+  const tryReleaseLock = useCallback(
+    function tryReleaseLock() {
+      if (!lockAPI.isClaimed()) {
+        return;
+      }
+
+      lockAPI.tryAbandon();
+
+      if (store.getState().phase !== 'IDLE') {
+        store.dispatch(flush());
+      }
+    },
+    [lockAPI, store],
+  );
   const isLockClaimed = useCallback(lockAPI.isClaimed, [lockAPI]);
 
   const api: SensorAPI = useMemo(
