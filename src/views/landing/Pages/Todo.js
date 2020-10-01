@@ -1,5 +1,4 @@
 import React from 'react';
-import Reveal from 'react-reveal/Reveal/';
 import json_1 from '../assets/lottie/time_ux.json';
 import json_2 from '../assets/lottie/3.json';
 import json_3 from "../assets/lottie/4.json";
@@ -72,7 +71,3 @@ const Todo = () => {
     )
 }
 export default Todo;
-
-
-
-{/* */}

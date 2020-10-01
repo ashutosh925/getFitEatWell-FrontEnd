@@ -1,15 +1,15 @@
 import React from "react"
-import { Row, Col } from "reactstrap"
+// import { Row, Col } from "reactstrap"
 
-let $primary = "#7367F0",
-  $success = "#28C76F",
-  $danger = "#EA5455",
-  $warning = "#FF9F43",
-  $primary_light = "#9c8cfc",
-  $warning_light = "#FFC085",
-  $danger_light = "#f29292",
-  $stroke_color = "#b9c3cd",
-  $label_color = "#e7eef7"
+// let $primary = "#7367F0",
+//   $success = "#28C76F",
+//   $danger = "#EA5455",
+//   $warning = "#FF9F43",
+//   $primary_light = "#9c8cfc",
+//   $warning_light = "#FFC085",
+//   $danger_light = "#f29292",
+//   $stroke_color = "#b9c3cd",
+//   $label_color = "#e7eef7"
 
 class EcommerceDashboard extends React.Component {
   render() {

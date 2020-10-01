@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Switch } from "react-router-dom";
 /*------ Pages-----*/
 import { Home } from "./Pages/Home";
 // import DigitalMarketing from "./Pages/Digital-marketing";
@@ -18,7 +18,7 @@ import { Home } from "./Pages/Home";
 // import Bloglist from "./Pages/Bloglist";
 // import BlogSingle from "./Pages/BlogSingle";
 // import Contact from "./Pages/Contact";
-import ScrollToTopRoute from "./ScrollToTopRoute";
+// import ScrollToTopRoute from "./ScrollToTopRoute";
 // import Landing from "./Pages/Landing";
 // import homesupport from "./Pages/home-support";
 // import homeERP from "./Pages/Home-ERP";

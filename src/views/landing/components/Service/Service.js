@@ -1,5 +1,4 @@
 import React from 'react';
-import SeoTitle from '../Title/SeoTitle';
 import Fade from 'react-reveal/Fade';
 import Lottie from 'react-lottie-player'
 import {Button} from "reactstrap"

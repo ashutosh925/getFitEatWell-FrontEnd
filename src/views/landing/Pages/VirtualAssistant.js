@@ -1,7 +1,5 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import Lottie from 'react-lottie-player'
-import {Button} from "reactstrap";
+import Lottie from 'react-lottie-player';
 import cookingWomen from '../assets/lottie/cookingWomen.json';
 import appStoreIcon from '../../../assets/img/gfew_img/appstore.jpg';
 const VirtualAssistant = () => {
@@ -16,7 +14,7 @@ const VirtualAssistant = () => {
 											When you check in for your cooking lesson, your Virtual Kitchen <br />
 											Assistant will video call you through the platform.Then you'll get <br /> cooking together.
 									</p>
-									<a href="#" class="mb-5 pb-5"><img src={appStoreIcon} class="app_store" alt="appstore" /></a>
+									<a href="/landing" class="mb-5 pb-5"><img src={appStoreIcon} class="app_store" alt="appstore" /></a>
 							</div>
                             <div class="col-12 col-lg-6">
 							 <Lottie loop animationData={cookingWomen} play style={{ width: "150%;", height: "150%;" }} />

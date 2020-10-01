@@ -1,7 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import Lottie from 'react-lottie-player'
-import {Button} from "reactstrap"
 
 const Pricing = () => {
     return(
@@ -24,7 +21,7 @@ const Pricing = () => {
                                                 <h5 class="mb-2 text-light">10$</h5>
                                                 <h5 class="mb-4 text-light">PRE ADULT COOK</h5>
                                                 <p class="card-text text-light mb-5 pb-5">Cook at 1 cooks-off <br /> within 1 Year from Sign-up</p>
-                                                <a class="nav-link btn btn-outline-secondary ml-3 signup mb-5 white_btn"  href="#">Sign Up <span class="sr-only">(current)</span></a>
+                                                <a class="nav-link btn btn-outline-secondary ml-3 signup mb-5 white_btn"  href="/sign_up">Sign Up <span class="sr-only">(current)</span></a>
                                             </div>
                                     </div>
                                     </div>
@@ -35,7 +32,7 @@ const Pricing = () => {
                                                 <h5 class="mb-2 text-light">10$</h5>
                                                 <h5 class="mb-4 text-light">PRE ADULT COOK</h5>
                                                 <p class="card-text text-light mb-5 pb-5">Cook at 1 cooks-off <br /> within 1 Year from Sign-up</p>
-                                                <a class="nav-link btn btn-outline-secondary ml-3 signup mb-5 white_btn" href="#">Sign Up <span class="sr-only">(current)</span></a>
+                                                <a class="nav-link btn btn-outline-secondary ml-3 signup mb-5 white_btn" href="/sign_up">Sign Up <span class="sr-only">(current)</span></a>
                                             </div>
                                     </div>
                                     </div>
@@ -46,7 +43,7 @@ const Pricing = () => {
                                                 <h5 class="mb-2 text-light">10$</h5>
                                                 <h5 class="mb-4 text-light">PRE ADULT COOK</h5>
                                                 <p class="card-text text-light mb-5 pb-5">Cook at 1 cooks-off <br /> within 1 Year from Sign-up</p>
-                                                <a class="nav-link btn btn-outline-secondary ml-3 signup mb-5 white_btn" href="#">Sign Up <span class="sr-only">(current)</span></a>
+                                                <a class="nav-link btn btn-outline-secondary ml-3 signup mb-5 white_btn" href="/sign_up">Sign Up <span class="sr-only">(current)</span></a>
                                             </div>
                                     </div>
                                     </div>
