@@ -5,7 +5,7 @@ import classnames from "classnames"
 // import brand_logo from '../../../../assets/img/logo/getFitEatWell.jpg';
 import brand_logo from '../../../../assets/img/gfew_img/logo2.png';
 // import brand_logo from '../../../../assets/img/gfew_img/logo.png';
-import sideBarClass from './sidebar.css';
+// import sideBarClass from './sidebar.css';
 
 class SidebarHeader extends Component {
   render() {
@@ -27,7 +27,7 @@ class SidebarHeader extends Component {
         <ul className="nav navbar-nav flex-row">
           <li className="nav-item mr-auto">
             <NavLink to="/" className="navbar-brand">
-              <img src={brand_logo} style={vuexy_logo}/>
+              <img src={brand_logo} style={vuexy_logo} alt="get-fit-eat-well"/>
             </NavLink>
           </li>
           <li className="nav-item nav-toggle">

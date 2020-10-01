@@ -1,5 +1,5 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 import {Button} from "reactstrap";
 import Lottie from 'react-lottie-player';
 import trolly from '../assets/lottie/troll.json';
@@ -13,7 +13,7 @@ const NavBar = () => {
         <div class="row">
                 <div class="col">
                         <nav class="navbar navbar-expand-lg navbar-dark ">
-                                  <a class="navbar-brand" href="#"><img src={logo} class="w-100" alt="Logo" /></a>
+                                  <a class="navbar-brand" href="/landing"><img src={logo} class="w-100" alt="Logo" /></a>
                                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                   </button>
@@ -56,6 +56,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
-
-{/*  */}

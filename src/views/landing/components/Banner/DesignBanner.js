@@ -1,5 +1,4 @@
 import React from 'react';
-import Reveal from 'react-reveal/Reveal/';
 import  how_it_work from '../../../../assets/img/gfew_img/how-it-works_1.png';
 import  how_it_works_chef from  '../../../../assets/img/gfew_img/how-it-works_1-chef.png';
 import  skill_1 from '../../../../assets/img/gfew_img/1_1.jpg';
@@ -7,7 +6,6 @@ import  skill_2 from '../../../../assets/img/gfew_img/1_2.jpg';
 import  skill_3  from '../../../../assets/img/gfew_img/1_3.jpg';
 import  skill_4  from '../../../../assets/img/gfew_img/1_4.jpg';
 import how_it_works_1_register from  '../../../../assets/img/gfew_img/how-it-works_1-register.png';
-// import  '../../../../assets/img/gfew_img/how-it-works_1.png';
 
 const DesignBanner = () => {
     return(
@@ -61,7 +59,7 @@ const DesignBanner = () => {
 							<div class="col text-center">
 									<h2>Your Digital Health Plan</h2>
 									<div class="reg mt-3">
-											<a href="#">
+											<a href="/register">
 												<img src={how_it_works_1_register} style={{width : "25% !important"}} class="d-inline-w-100" alt="how-it-works_1-register" /></a>
 									</div> <br />
 									

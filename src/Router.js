@@ -4,8 +4,8 @@ import { history } from "./history"
 import { connect } from "react-redux"
 import { Redirect } from "react-router-dom"
 import Spinner from "./components/@vuexy/spinner/Loading-spinner"
-import knowledgeBaseCategory from "./views/pages/knowledge-base/Category"
-import knowledgeBaseQuestion from "./views/pages/knowledge-base/Questions"
+// import knowledgeBaseCategory from "./views/pages/knowledge-base/Category"
+// import knowledgeBaseQuestion from "./views/pages/knowledge-base/Questions"
 import { ContextLayout } from "./utility/context/Layout"
 
 // Route-based code splitting
@@ -19,108 +19,108 @@ const analyticsDashboard = lazy(() =>
 const chat = lazy(() => import("./views/apps/chat/Chat"))
 const todo = lazy(() => import("./views/apps/todo/Todo"))
 const calendar = lazy(() => import("./views/apps/calendar/Calendar"))
-const shop = lazy(() => import("./views/apps/ecommerce/shop/Shop"))
-const wishlist = lazy(() => import("./views/apps/ecommerce/wishlist/Wishlist"))
-const checkout = lazy(() => import("./views/apps/ecommerce/cart/Cart"))
-const productDetail = lazy(() => import("./views/apps/ecommerce/detail/Detail"))
-const grid = lazy(() => import("./views/ui-elements/grid/Grid"))
-const typography = lazy(() =>
-  import("./views/ui-elements/typography/Typography")
-)
-const textutilities = lazy(() =>
-  import("./views/ui-elements/text-utilities/TextUtilities")
-)
-const syntaxhighlighter = lazy(() =>
-  import("./views/ui-elements/syntax-highlighter/SyntaxHighlighter")
-)
-const colors = lazy(() => import("./views/ui-elements/colors/Colors"))
-const reactfeather = lazy(() =>
-  import("./views/ui-elements/icons/FeatherIcons")
-)
-const basicCards = lazy(() => import("./views/ui-elements/cards/basic/Cards"))
-const statisticsCards = lazy(() =>
-  import("./views/ui-elements/cards/statistics/StatisticsCards")
-)
-const analyticsCards = lazy(() =>
-  import("./views/ui-elements/cards/analytics/Analytics")
-)
-const actionCards = lazy(() =>
-  import("./views/ui-elements/cards/actions/CardActions")
-)
-const Alerts = lazy(() => import("./components/reactstrap/alerts/Alerts"))
-const Buttons = lazy(() => import("./components/reactstrap/buttons/Buttons"))
-const Breadcrumbs = lazy(() =>
-  import("./components/reactstrap/breadcrumbs/Breadcrumbs")
-)
-const Carousel = lazy(() => import("./components/reactstrap/carousel/Carousel"))
-const Collapse = lazy(() => import("./components/reactstrap/collapse/Collapse"))
-const Dropdowns = lazy(() =>
-  import("./components/reactstrap/dropdowns/Dropdown")
-)
-const ListGroup = lazy(() =>
-  import("./components/reactstrap/listGroup/ListGroup")
-)
-const Modals = lazy(() => import("./components/reactstrap/modal/Modal"))
-const Pagination = lazy(() =>
-  import("./components/reactstrap/pagination/Pagination")
-)
-const NavComponent = lazy(() =>
-  import("./components/reactstrap/navComponent/NavComponent")
-)
-const Navbar = lazy(() => import("./components/reactstrap/navbar/Navbar"))
-const Tabs = lazy(() => import("./components/reactstrap/tabs/Tabs"))
-const TabPills = lazy(() => import("./components/reactstrap/tabPills/TabPills"))
-const Tooltips = lazy(() => import("./components/reactstrap/tooltips/Tooltips"))
-const Popovers = lazy(() => import("./components/reactstrap/popovers/Popovers"))
-const Badge = lazy(() => import("./components/reactstrap/badge/Badge"))
-const BadgePill = lazy(() =>
-  import("./components/reactstrap/badgePills/BadgePill")
-)
-const Progress = lazy(() => import("./components/reactstrap/progress/Progress"))
-const Media = lazy(() => import("./components/reactstrap/media/MediaObject"))
-const Spinners = lazy(() => import("./components/reactstrap/spinners/Spinners"))
-const Toasts = lazy(() => import("./components/reactstrap/toasts/Toasts"))
-const avatar = lazy(() => import("./components/@vuexy/avatar/Avatar"))
-const AutoComplete = lazy(() =>
-  import("./components/@vuexy/autoComplete/AutoComplete")
-)
-const chips = lazy(() => import("./components/@vuexy/chips/Chips"))
-const divider = lazy(() => import("./components/@vuexy/divider/Divider"))
-const VuexyWizard = lazy(() => import("./components/@vuexy/wizard/Wizard"))
-const listView = lazy(() => import("./views/ui-elements/data-list/ListView"))
-const thumbView = lazy(() => import("./views/ui-elements/data-list/ThumbView"))
-const select = lazy(() => import("./views/forms/form-elements/select/Select"))
-const switchComponent = lazy(() =>
-  import("./views/forms/form-elements/switch/Switch")
-)
-const checkbox = lazy(() =>
-  import("./views/forms/form-elements/checkboxes/Checkboxes")
-)
-const radio = lazy(() => import("./views/forms/form-elements/radio/Radio"))
-const input = lazy(() => import("./views/forms/form-elements/input/Input"))
-const group = lazy(() =>
-  import("./views/forms/form-elements/input-groups/InputGoups")
-)
-const numberInput = lazy(() =>
-  import("./views/forms/form-elements/number-input/NumberInput")
-)
-const textarea = lazy(() =>
-  import("./views/forms/form-elements/textarea/Textarea")
-)
-const pickers = lazy(() =>
-  import("./views/forms/form-elements/datepicker/Pickers")
-)
-const inputMask = lazy(() =>
-  import("./views/forms/form-elements/input-mask/InputMask")
-)
-const layout = lazy(() => import("./views/forms/form-layouts/FormLayouts"))
-const formik = lazy(() => import("./views/forms/formik/Formik"))
-const tables = lazy(() => import("./views/tables/reactstrap/Tables"))
-const ReactTables = lazy(() =>
-  import("./views/tables/react-tables/ReactTables")
-)
-const Aggrid = lazy(() => import("./views/tables/aggrid/Aggrid"))
-const DataTable = lazy(() => import("./views/tables/data-tables/DataTables"))
+// const shop = lazy(() => import("./views/apps/ecommerce/shop/Shop"))
+// const wishlist = lazy(() => import("./views/apps/ecommerce/wishlist/Wishlist"))
+// const checkout = lazy(() => import("./views/apps/ecommerce/cart/Cart"))
+// const productDetail = lazy(() => import("./views/apps/ecommerce/detail/Detail"))
+// const grid = lazy(() => import("./views/ui-elements/grid/Grid"))
+// const typography = lazy(() =>
+  // import("./views/ui-elements/typography/Typography")
+// )
+// const textutilities = lazy(() =>
+//   import("./views/ui-elements/text-utilities/TextUtilities")
+// )
+// const syntaxhighlighter = lazy(() =>
+//   import("./views/ui-elements/syntax-highlighter/SyntaxHighlighter")
+// )
+// const colors = lazy(() => import("./views/ui-elements/colors/Colors"))
+// const reactfeather = lazy(() =>
+//   import("./views/ui-elements/icons/FeatherIcons")
+// )
+// const basicCards = lazy(() => import("./views/ui-elements/cards/basic/Cards"))
+// const statisticsCards = lazy(() =>
+//   import("./views/ui-elements/cards/statistics/StatisticsCards")
+// )
+// const analyticsCards = lazy(() =>
+//   import("./views/ui-elements/cards/analytics/Analytics")
+// )
+// const actionCards = lazy(() =>
+//   import("./views/ui-elements/cards/actions/CardActions")
+// )
+// const Alerts = lazy(() => import("./components/reactstrap/alerts/Alerts"))
+// const Buttons = lazy(() => import("./components/reactstrap/buttons/Buttons"))
+// const Breadcrumbs = lazy(() =>
+//   import("./components/reactstrap/breadcrumbs/Breadcrumbs")
+// )
+// const Carousel = lazy(() => import("./components/reactstrap/carousel/Carousel"))
+// const Collapse = lazy(() => import("./components/reactstrap/collapse/Collapse"))
+// const Dropdowns = lazy(() =>
+//   import("./components/reactstrap/dropdowns/Dropdown")
+// )
+// const ListGroup = lazy(() =>
+//   import("./components/reactstrap/listGroup/ListGroup")
+// )
+// const Modals = lazy(() => import("./components/reactstrap/modal/Modal"))
+// const Pagination = lazy(() =>
+//   import("./components/reactstrap/pagination/Pagination")
+// )
+// const NavComponent = lazy(() =>
+//   import("./components/reactstrap/navComponent/NavComponent")
+// )
+// const Navbar = lazy(() => import("./components/reactstrap/navbar/Navbar"))
+// const Tabs = lazy(() => import("./components/reactstrap/tabs/Tabs"))
+// const TabPills = lazy(() => import("./components/reactstrap/tabPills/TabPills"))
+// const Tooltips = lazy(() => import("./components/reactstrap/tooltips/Tooltips"))
+// const Popovers = lazy(() => import("./components/reactstrap/popovers/Popovers"))
+// const Badge = lazy(() => import("./components/reactstrap/badge/Badge"))
+// const BadgePill = lazy(() =>
+//   import("./components/reactstrap/badgePills/BadgePill")
+// )
+// const Progress = lazy(() => import("./components/reactstrap/progress/Progress"))
+// const Media = lazy(() => import("./components/reactstrap/media/MediaObject"))
+// const Spinners = lazy(() => import("./components/reactstrap/spinners/Spinners"))
+// const Toasts = lazy(() => import("./components/reactstrap/toasts/Toasts"))
+// const avatar = lazy(() => import("./components/@vuexy/avatar/Avatar"))
+// const AutoComplete = lazy(() =>
+//   import("./components/@vuexy/autoComplete/AutoComplete")
+// )
+// const chips = lazy(() => import("./components/@vuexy/chips/Chips"))
+// const divider = lazy(() => import("./components/@vuexy/divider/Divider"))
+// const VuexyWizard = lazy(() => import("./components/@vuexy/wizard/Wizard"))
+// const listView = lazy(() => import("./views/ui-elements/data-list/ListView"))
+// const thumbView = lazy(() => import("./views/ui-elements/data-list/ThumbView"))
+// const select = lazy(() => import("./views/forms/form-elements/select/Select"))
+// const switchComponent = lazy(() =>
+//   import("./views/forms/form-elements/switch/Switch")
+// )
+// const checkbox = lazy(() =>
+//   import("./views/forms/form-elements/checkboxes/Checkboxes")
+// )
+// const radio = lazy(() => import("./views/forms/form-elements/radio/Radio"))
+// const input = lazy(() => import("./views/forms/form-elements/input/Input"))
+// const group = lazy(() =>
+//   import("./views/forms/form-elements/input-groups/InputGoups")
+// )
+// const numberInput = lazy(() =>
+//   import("./views/forms/form-elements/number-input/NumberInput")
+// )
+// const textarea = lazy(() =>
+//   import("./views/forms/form-elements/textarea/Textarea")
+// )
+// const pickers = lazy(() =>
+//   import("./views/forms/form-elements/datepicker/Pickers")
+// )
+// const inputMask = lazy(() =>
+//   import("./views/forms/form-elements/input-mask/InputMask")
+// )
+// const layout = lazy(() => import("./views/forms/form-layouts/FormLayouts"))
+// const formik = lazy(() => import("./views/forms/formik/Formik"))
+// const tables = lazy(() => import("./views/tables/reactstrap/Tables"))
+// const ReactTables = lazy(() =>
+//   import("./views/tables/react-tables/ReactTables")
+// )
+// const Aggrid = lazy(() => import("./views/tables/aggrid/Aggrid"))
+// const DataTable = lazy(() => import("./views/tables/data-tables/DataTables"))
 const profile = lazy(() => import("./views/pages/profile/Profile"))
 // const faq = lazy(() => import("./views/pages/faq/FAQ"))
 // const knowledgeBase = lazy(() =>
@@ -154,12 +154,12 @@ const error404 = lazy(() => import("./views/pages/misc/error/404"))
 // const swiper = lazy(() => import("./extensions/swiper/Swiper"))
 // const i18n = lazy(() => import("./extensions/i18n/I18n"))
 const reactPaginate = lazy(() => import("./extensions/pagination/Pagination"))
-const tree = lazy(() => import("./extensions/treeview/TreeView"))
-const Import = lazy(() => import("./extensions/import-export/Import"))
-const Export = lazy(() => import("./extensions/import-export/Export"))
-const ExportSelected = lazy(() =>
-  import("./extensions/import-export/ExportSelected")
-)
+// const tree = lazy(() => import("./extensions/treeview/TreeView"))
+// const Import = lazy(() => import("./extensions/import-export/Import"))
+// const Export = lazy(() => import("./extensions/import-export/Export"))
+// const ExportSelected = lazy(() =>
+//   import("./extensions/import-export/ExportSelected")
+// )
 const userList = lazy(() => import("./views/apps/user/list/List"))
 const userEdit = lazy(() => import("./views/apps/user/edit/Edit"))
 const userView = lazy(() => import("./views/apps/user/view/View"))
@@ -167,16 +167,16 @@ const Login = lazy(() => import("./views/pages/authentication/login/Login"))
 const forgotPassword = lazy(() =>
   import("./views/pages/authentication/ForgotPassword")
 )
-const lockScreen = lazy(() => import("./views/pages/authentication/LockScreen"))
+// const lockScreen = lazy(() => import("./views/pages/authentication/LockScreen"))
 const resetPassword = lazy(() =>
   import("./views/pages/authentication/ResetPassword")
 )
 const register = lazy(() =>
   import("./views/pages/authentication/register/Register")
 )
-const accessControl = lazy(() =>
-  import("./extensions/access-control/AccessControl")
-)
+// const accessControl = lazy(() =>
+//   import("./extensions/access-control/AccessControl")
+// )
 const Example = lazy(()=>
 import("./views/demo/Example")
 )

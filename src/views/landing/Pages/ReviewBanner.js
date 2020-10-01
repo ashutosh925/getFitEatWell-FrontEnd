@@ -1,9 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import Lottie from 'react-lottie-player'
-import {Button} from "reactstrap";
-import cookingWomen from '../assets/lottie/cookingWomen.json';
-import appStoreIcon from '../../../assets/img/gfew_img/appstore.jpg';
 
 const ReviewBanner = () => {
     return(
@@ -16,7 +11,7 @@ const ReviewBanner = () => {
                                         
                                         Your chef will lead you through your recipes , cooking right alongside you.
                                 </p>
-                                <a class="nav-link btn btn-outline-secondary ml-3 signup signup_btn" href="#">Sign Up <span class="sr-only">(current)</span></a>
+                                <a class="nav-link btn btn-outline-secondary ml-3 signup signup_btn" href="/sign_up">Sign Up <span class="sr-only">(current)</span></a>
                         </div>
                 </div>
       </div>
