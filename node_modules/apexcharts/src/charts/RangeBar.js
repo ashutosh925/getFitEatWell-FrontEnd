@@ -87,7 +87,12 @@ class RangeBar extends Bar {
         if (this.isHorizontal) {
           barYPosition = y + barHeight * this.visibleI
 
-          let srty = (yDivision - barHeight * this.seriesLen) / 2
+          let seriesLen = this.seriesLen
+          if (w.config.plotOptions.bar.rangeBarGroupRows) {
+            seriesLen = 1
+          }
+
+          let srty = (yDivision - barHeight * seriesLen) / 2
 
           if (typeof w.config.series[i].data[j] === 'undefined') {
             // no data exists for further indexes, hence we need to get out the innr loop.
@@ -190,7 +195,11 @@ class RangeBar extends Bar {
       (tx) => tx.x === labelX && tx.overlaps.length > 0
     )
 
-    barYPosition = srty + barHeight * this.visibleI + yDivision * rowIndex
+    if (w.config.plotOptions.bar.rangeBarGroupRows) {
+      barYPosition = srty + yDivision * rowIndex
+    } else {
+      barYPosition = srty + barHeight * this.visibleI + yDivision * rowIndex
+    }
 
     if (overlappedIndex > -1 && !w.config.plotOptions.bar.rangeBarOverlap) {
       overlaps = w.globals.seriesRangeBarTimeline[i][overlappedIndex].overlaps

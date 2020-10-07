@@ -1,6 +1,6 @@
-# # dependencies
-# /node_modules
+# dependencies
+/node_modules
 
-# # production
-# /build
-# /dist
+# production
+/build
+/dist

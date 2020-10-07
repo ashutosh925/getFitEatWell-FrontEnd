@@ -11,6 +11,7 @@ if (!firebase.apps.length) {
 }
 
 let firebaseAuth = firebase.auth()
+const base_url = "http://localhost:2000";
 
 export const signupWithFirebase = (email, password, name) => {
   return dispatch => {
@@ -57,26 +58,27 @@ export const signupWithFirebase = (email, password, name) => {
 export const signupWithJWT = (signupData) => {
  
   console.log(signupData);
-  // first_name : "",
-  // last_name : "",
-  // email: "",
-  // password: "",
-  // mobile: "",
-  // confirmPass: ""
+
   return dispatch => {
     axios
-      .post("/api/authenticate/register/user", {
-        email: 'john@doe.com',
-        password: '1234',
-        name: 'john',
+      .post(base_url + "/api/v1/auth/register", {
+        login_type:'email',
+        phone:'123',
+        email:'abac@b.com',
+        password:'12345678',
+        lat:'1.2',
+        long: '0.0',
+        zipcode: '12345',
+        first_name: 'john',
+        social_token: '123455',
+        last_name: 'doe',
       })
       .then(response => {
         var loggedInUser
 
         if(response.data){
 
-          console.log(response.data);
-
+          //console.log(response.data);
           loggedInUser = response.data.user
           
           localStorage.setItem("token", response.data.token)
