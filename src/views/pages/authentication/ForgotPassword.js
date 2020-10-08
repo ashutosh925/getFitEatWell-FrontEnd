@@ -7,7 +7,7 @@ import {
   Row,
   Col,
   FormGroup,
-  Form,
+  // Form,
   Input,
   Button,
   Label
@@ -36,9 +36,6 @@ class ForgotPassword extends React.Component {
         login_type : 'email',
       })
       .then(response => {
-        var loggedInUser
-       
-        console.log(response.data.status);
         if (response.data) {
           this.setState({status : response.data.status})
           history.push("/reset-password");

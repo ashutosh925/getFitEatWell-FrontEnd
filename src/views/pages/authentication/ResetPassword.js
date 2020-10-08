@@ -36,18 +36,13 @@ class ResetPassword extends React.Component {
         login_type : 'email',
       })
       .then(response => {
-        var loggedInUser
-       
-        console.log(response.data.status);
         if (response.data) {
           this.setState({status : response.data.status})
           history.push("/reset-password");
         }
       })
       .catch(err => {
-        
         if(err.response && err.response.data){
-          console.log( err.response.data.error)
           this.setState({error : err.response.data.error});
         }else{
           this.setState({error : "Something went wrong"});
@@ -70,9 +65,6 @@ class ResetPassword extends React.Component {
          
       })
       .then(response => {
-        var loggedInUser
-       
-        console.log(response.data.status);
         if (response.data) {
           this.setState({status : response.data.status})
           history.push("/reset-password");

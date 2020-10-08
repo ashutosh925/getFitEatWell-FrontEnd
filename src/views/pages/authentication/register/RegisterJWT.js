@@ -4,9 +4,9 @@ import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy"
 import { Check } from "react-feather"
 import { connect } from "react-redux"
 import { signupWithJWT } from "../../../../redux/actions/auth/registerActions"
-import { history } from "../../../../history"
 import axios from 'axios';
 import {Alert} from "reactstrap";
+import {history} from "../../../../history";
 
 class RegisterJWT extends React.Component {
   state = {
@@ -22,9 +22,7 @@ class RegisterJWT extends React.Component {
 
   handleRegister = e => {
     e.preventDefault()
-    console.log(this.state);
-    this.callApi();
-    // this.props.signupWithJWT(this.state);    
+    this.callApi();    
   }
   callApi(){
 
@@ -46,9 +44,7 @@ class RegisterJWT extends React.Component {
     .then(response => {
       console.log(response);
       this.setState({sucess : true})
-      var loggedInUser
       if(response.data){
-        loggedInUser = response.data.loggedInUser;
         history.push("/login");
       }
 
