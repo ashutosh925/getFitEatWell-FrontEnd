@@ -436,7 +436,7 @@ export const searchResult = [
         id: 64,
         target: "forgotPassword",
         title: "Forgot Password",
-        link: "/pages/forgot-password",
+        link: "forgot-password",
         icon: "Crosshair"
       },
       {

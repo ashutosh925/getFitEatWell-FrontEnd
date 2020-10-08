@@ -8,7 +8,6 @@ import { connect } from "react-redux"
 import { history } from "../../../../history"
 import axios from "axios";
 import {Alert} from "reactstrap";
-// import { useHistory } from "react-router-dom";
 
 // const history = useHistory();
 class LoginJWT extends React.Component {
@@ -40,15 +39,19 @@ class LoginJWT extends React.Component {
       })
       .then(response => {
         var loggedInUser
-        console.log(response);
+        console.log(response.data.data);
         if (response.data) {
-          loggedInUser = response.data.user
+          loggedInUser = response.data.data.user
+          this.props.loginWithJWT(loggedInUser);
           history.push("/profile");
         }
       })
       .catch(err => {
-        this.setState({error : err.response.data.error})
-        console.log(err.response.data.error)
+        if(err.response && err.response.data){
+          this.setState({error : err.response.data.error});
+        }else{
+          this.setState({error : "Something went wrong"});
+        }
       })
   }
 
@@ -94,7 +97,7 @@ class LoginJWT extends React.Component {
                 onChange={this.handleRemember}
               />
               <div className="float-right">
-                <Link to="/forgot-password">Forgot Password?</Link>
+                <Link to="/forgetPassword">Forgot Password?</Link>
               </div>
             </FormGroup>
             <div className="d-flex justify-content-between">

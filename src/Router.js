@@ -222,7 +222,9 @@ const mapStateToProps = state => {
 const AppRoute = connect(mapStateToProps)(RouteConfig)
 
 class AppRouter extends React.Component {
+  
   render() {
+    console.log('user prop data', this.props);
     console.log(history);
     return (
       <Router history={history}>
@@ -249,7 +251,7 @@ class AppRouter extends React.Component {
           <AppRoute path="/app/user/edit" component={userEdit} />
           <AppRoute path="/app/user/view" component={userView} />
           <AppRoute
-            path="/pages/reset-password"
+            path="/reset-password"
             component={resetPassword}
             fullLayout
           />
@@ -397,11 +399,11 @@ class AppRouter extends React.Component {
             component={lockScreen}
             fullLayout
           />
-          <AppRoute
+          {/* <AppRoute
             path="/pages/reset-password"
             component={resetPassword}
             fullLayout
-          />
+          /> */}
           <AppRoute path="/misc/error/500" component={error500} fullLayout />
           <AppRoute
             path="/misc/not-authorized"

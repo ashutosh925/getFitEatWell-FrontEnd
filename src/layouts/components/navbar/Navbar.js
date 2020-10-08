@@ -9,10 +9,13 @@ import {
 } from "../../../redux/actions/auth/loginActions"
 import NavbarBookmarks from "./NavbarBookmarks"
 import NavbarUser from "./NavbarUser"
-import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
+import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg";
+import {history} from "../../../history";
+import authReducer from '../../../redux/reducers/auth/index';
 
 const UserName = props => {
   let username = ""
+  console.log('props.userdata', authReducer)
   if (props.userdata !== undefined) {
     username = props.userdata.name
   } else if (props.user.login.values !== undefined) {
@@ -24,8 +27,9 @@ const UserName = props => {
       username = props.user.login.values.loggedInUser.name
     }
   } else {
-    username = "John Doe"
+    history.push("/");
   }
+  console.log(props.userdata);
   return username
 }
 const ThemeNavbar = props => {

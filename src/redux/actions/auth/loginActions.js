@@ -130,8 +130,9 @@ export const loginWithGithub = () => {
 }
 
 export const loginWithJWT = user => {
-  console.log('loginWithJWT',user)
-  return user;
+  return dispatch => {
+    dispatch({ type: "LOGIN_WITH_JWT", payload: {...user} })
+  }
 }
 
 export const logoutWithJWT = () => {

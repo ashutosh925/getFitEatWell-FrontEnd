@@ -15,8 +15,82 @@ import {
 import { history } from "../../../history"
 import resetImg from "../../../assets/img/pages/reset-password.png"
 import "../../../assets/scss/pages/authentication.scss"
+import axios from "axios";
 
 class ResetPassword extends React.Component {
+  state = {
+    token : "",
+    email : "",
+    confirm_password : "",
+
+  }
+  callApi(){
+    
+    console.log('calling api');
+    const {email} = this.state;
+    if(email !== ""){
+    const base_url = "http://localhost:2000";
+     axios
+      .post(base_url + "/auth/forget-password-email", {
+        email: email,
+        login_type : 'email',
+      })
+      .then(response => {
+        var loggedInUser
+       
+        console.log(response.data.status);
+        if (response.data) {
+          this.setState({status : response.data.status})
+          history.push("/reset-password");
+        }
+      })
+      .catch(err => {
+        
+        if(err.response && err.response.data){
+          console.log( err.response.data.error)
+          this.setState({error : err.response.data.error});
+        }else{
+          this.setState({error : "Something went wrong"});
+        }
+      })
+    }else{
+      this.setState({error : "Enter valid Email"});
+    }
+  }
+
+  verifyToken () {
+ 
+    console.log('calling api');
+    const {email} = this.state;
+    if(email !== ""){
+    const base_url = "http://localhost:2000";
+     axios
+      .post(base_url + "/auth/reset-password/vertify-token", {
+        email: email,
+         
+      })
+      .then(response => {
+        var loggedInUser
+       
+        console.log(response.data.status);
+        if (response.data) {
+          this.setState({status : response.data.status})
+          history.push("/reset-password");
+        }
+      })
+      .catch(err => {
+        
+        if(err.response && err.response.data){
+          console.log( err.response.data.error)
+          this.setState({error : err.response.data.error});
+        }else{
+          this.setState({error : "Something went wrong"});
+        }
+      })
+    }else{
+      this.setState({error : "Enter valid Email"});
+    }
+  }
   render() {
     return (
       <Row className="m-0 justify-content-center">

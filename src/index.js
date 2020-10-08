@@ -20,6 +20,7 @@ ReactDOM.render(
     domain={config.domain}
     client_id={config.clientId}
     redirect_uri={window.location.origin + process.env.REACT_APP_PUBLIC_PATH}>
+      {'store Data',console.log(store)}
     <Provider store={store}>
       <Suspense fallback={<Spinner />}>
         <Layout>

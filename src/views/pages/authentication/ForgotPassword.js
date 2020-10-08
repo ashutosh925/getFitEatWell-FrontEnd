@@ -15,10 +15,53 @@ import {
 import fgImg from "../../../assets/img/pages/forgot-password.png"
 import { history } from "../../../history"
 import "../../../assets/scss/pages/authentication.scss"
+import axios from 'axios';
+import {Alert} from "reactstrap";
 
 class ForgotPassword extends React.Component {
+  state = {
+    email: "",
+    error : "",
+    status : false,
+  }
+  callApi(){
+    
+    console.log('calling api');
+    const {email} = this.state;
+    if(email !== ""){
+    const base_url = "http://localhost:2000";
+     axios
+      .post(base_url + "/auth/forget-password-email", {
+        email: email,
+        login_type : 'email',
+      })
+      .then(response => {
+        var loggedInUser
+       
+        console.log(response.data.status);
+        if (response.data) {
+          this.setState({status : response.data.status})
+          history.push("/reset-password");
+        }
+      })
+      .catch(err => {
+        
+        if(err.response && err.response.data){
+          console.log( err.response.data.error)
+          this.setState({error : err.response.data.error});
+        }else{
+          this.setState({error : "Something went wrong"});
+        }
+      })
+    }else{
+      this.setState({error : "Enter valid Email"});
+    }
+  }
+
   render() {
-    return (
+    const {email, error} =  this.state;
+
+        return (
       <Row className="m-0 justify-content-center">
         <Col
           sm="8"
@@ -42,14 +85,15 @@ class ForgotPassword extends React.Component {
                       <h4 className="mb-0">Recover your password</h4>
                     </CardTitle>
                   </CardHeader>
-                  <p className="px-2 auth-title">
+                 {error === "" && <p className="px-2 auth-title">
                     Please enter your email address and we'll send you
                     instructions on how to reset your password.
-                  </p>
+                  </p>}
+                  {error !== "" &&  <Alert color="warning">{error}</Alert>}
                   <CardBody className="pt-1 pb-0">
-                    <Form>
+                    {/* <Form > */}
                       <FormGroup className="form-label-group">
-                        <Input type="text" placeholder="Email" required />
+                        <Input type="text" name="email" placeholder="Email" required value={email} onChange={e => this.setState({ email: e.target.value })}/>
                         <Label>Email</Label>
                       </FormGroup>
                       <div className="float-md-left d-block mb-1">
@@ -67,15 +111,12 @@ class ForgotPassword extends React.Component {
                           color="primary"
                           type="submit"
                           className="px-75 btn-block"
-                          onClick={e => {
-                            e.preventDefault()
-                            history.push("/")
-                          }}
+                          onClick={() => this.callApi()}
                         >
                           Recover Password
                         </Button.Ripple>
                       </div>
-                    </Form>
+                    {/* </Form> */}
                   </CardBody>
                 </Card>
               </Col>

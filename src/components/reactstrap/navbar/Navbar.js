@@ -18,7 +18,7 @@ class Navbars extends React.Component {
           breadCrumbActive="Navbar"
         />
         <div id="navbar-component">
-          <NavbarBasic />
+          {/* <NavbarBasic /> */}
           <NavbarColors />
           <NavbarCollapse />
         </div>
