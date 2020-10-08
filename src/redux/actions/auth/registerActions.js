@@ -56,43 +56,8 @@ export const signupWithFirebase = (email, password, name) => {
 }
 
 export const signupWithJWT = (signupData) => {
- 
   console.log(signupData);
-
-  return dispatch => {
-    axios
-      .post(base_url + "/api/v1/auth/register", {
-        login_type:'email',
-        phone:'123',
-        email:'abac@b.com',
-        password:'12345678',
-        lat:'1.2',
-        long: '0.0',
-        zipcode: '12345',
-        first_name: 'john',
-        social_token: '123455',
-        last_name: 'doe',
-      })
-      .then(response => {
-        var loggedInUser
-
-        if(response.data){
-
-          //console.log(response.data);
-          loggedInUser = response.data.user
-          
-          localStorage.setItem("token", response.data.token)
-
-          dispatch({
-            type: "LOGIN_WITH_JWT",
-            payload: { loggedInUser, loggedInWith: "jwt" }
-          })
-
-          history.push("/")
-        }
-
-      })
-      .catch(err => console.log(err))
-
-  }
+  // return dispatch => {
+  // }
+  return signupData;
 }

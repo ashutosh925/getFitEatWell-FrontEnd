@@ -68,7 +68,7 @@ class Register extends React.Component {
                           this.toggle("1")
                         }}
                       >
-                        LOGIN
+                        Register
                       </NavLink>
                     </NavItem>
                     

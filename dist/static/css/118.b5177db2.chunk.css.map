@@ -1,0 +1,1 @@
+{"version":3,"sources":["recharts.scss"],"names":[],"mappings":"AAEA,kBACE,YAAa","file":"118.b5177db2.chunk.css","sourcesContent":["/***** ReCharts *****/\n\n.recharts-wrapper {\n  height: 350px;\n}\n"]}

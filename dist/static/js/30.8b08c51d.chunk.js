@@ -1,2 +1,0 @@
-(this["webpackJsonpGETFIT-FRONTEND"]=this["webpackJsonpGETFIT-FRONTEND"]||[]).push([[30],{905:function(e,n,t){"use strict";t.r(n);var s=t(0),u=t.n(s);n.default=function(){return u.a.createElement("div",null,"demo")}}}]);
-//# sourceMappingURL=30.8b08c51d.chunk.js.map

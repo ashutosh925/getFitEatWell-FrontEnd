@@ -22,7 +22,7 @@ const calendar = lazy(() => import("./views/apps/calendar/Calendar"))
 const shop = lazy(() => import("./views/apps/ecommerce/shop/Shop"))
 const wishlist = lazy(() => import("./views/apps/ecommerce/wishlist/Wishlist"))
 const checkout = lazy(() => import("./views/apps/ecommerce/cart/Cart"))
-const productDetail = lazy(() => import("./views/apps/ecommerce/detail/Detail"))
+// const productDetail = lazy(() => import("./views/apps/ecommerce/detail/Detail"))
 const grid = lazy(() => import("./views/ui-elements/grid/Grid"))
 const typography = lazy(() =>
   import("./views/ui-elements/typography/Typography")
@@ -116,9 +116,9 @@ const inputMask = lazy(() =>
 const layout = lazy(() => import("./views/forms/form-layouts/FormLayouts"))
 const formik = lazy(() => import("./views/forms/formik/Formik"))
 const tables = lazy(() => import("./views/tables/reactstrap/Tables"))
-const ReactTables = lazy(() =>
-  import("./views/tables/react-tables/ReactTables")
-)
+// const ReactTables = lazy(() =>
+//   import("./views/tables/react-tables/ReactTables")
+// )
 const Aggrid = lazy(() => import("./views/tables/aggrid/Aggrid"))
 const DataTable = lazy(() => import("./views/tables/data-tables/DataTables"))
 const profile = lazy(() => import("./views/pages/profile/Profile"))
@@ -151,7 +151,7 @@ const clipboard = lazy(() =>
   import("./extensions/copy-to-clipboard/CopyToClipboard")
 )
 const menu = lazy(() => import("./extensions/contexify/Contexify"))
-const swiper = lazy(() => import("./extensions/swiper/Swiper"))
+// const swiper = lazy(() => import("./extensions/swiper/Swiper"))
 const i18n = lazy(() => import("./extensions/i18n/I18n"))
 const reactPaginate = lazy(() => import("./extensions/pagination/Pagination"))
 const tree = lazy(() => import("./extensions/treeview/TreeView"))
@@ -223,6 +223,7 @@ const AppRoute = connect(mapStateToProps)(RouteConfig)
 
 class AppRouter extends React.Component {
   render() {
+    console.log(history);
     return (
       <Router history={history}>
         <Switch>
@@ -281,10 +282,10 @@ class AppRouter extends React.Component {
           <AppRoute path="/calendar" component={calendar} />
           <AppRoute path="/ecommerce/shop" component={shop} />
           <AppRoute path="/ecommerce/wishlist" component={wishlist} />
-          <AppRoute
+          {/* <AppRoute
             path="/ecommerce/product-detail"
             component={productDetail}
-          />
+          /> */}
           <AppRoute
             path="/ecommerce/checkout"
             component={checkout}
@@ -353,7 +354,7 @@ class AppRouter extends React.Component {
           <AppRoute path="/forms/layout/form-layout" component={layout} />
           <AppRoute path="/forms/formik" component={formik} />{" "}
           <AppRoute path="/tables/reactstrap" component={tables} />
-          <AppRoute path="/tables/react-tables" component={ReactTables} />
+          {/* <AppRoute path="/tables/react-tables" component={ReactTables} /> */}
           <AppRoute path="/tables/agGrid" component={Aggrid} />
           <AppRoute path="/tables/data-tables" component={DataTable} />
           <AppRoute path="/pages/profile" component={profile} />
@@ -428,7 +429,7 @@ class AppRouter extends React.Component {
           <AppRoute path="/extensions/tour" component={tour} />
           <AppRoute path="/extensions/clipboard" component={clipboard} />
           <AppRoute path="/extensions/context-menu" component={menu} />
-          <AppRoute path="/extensions/swiper" component={swiper} />
+          {/* <AppRoute path="/extensions/swiper" component={swiper} /> */}
           <AppRoute
             path="/extensions/access-control"
             component={accessControl}

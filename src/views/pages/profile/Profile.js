@@ -28,6 +28,9 @@ class Profile extends React.Component {
       })
     }, 2000)
   }
+  componentDidMount(){
+    console.log('Profile rendred');
+  }
 
   render() {
     return (

@@ -12,58 +12,8 @@ if (!firebase.apps.length) {
 
 let firebaseAuth = firebase.auth()
 
-// const initAuth0 = new auth0.WebAuth(configAuth)
+const base_url = "http://localhost:2000";
 
-export const submitLoginWithFireBase = (email, password, remember) => {
-  return dispatch => {
-    let userEmail = null,
-      loggedIn = false
-    firebaseAuth
-      .signInWithEmailAndPassword(email, password)
-      .then(result => {
-        firebaseAuth.onAuthStateChanged(user => {
-          result.user.updateProfile({
-            displayName: "Admin"
-          })
-          let name = result.user.displayName
-          if (user) {
-            userEmail = user.email
-            loggedIn = true
-            dispatch({
-              type: "LOGIN_WITH_EMAIL",
-              payload: {
-                email: userEmail,
-                name,
-                isSignedIn: loggedIn,
-                loggedInWith: "firebase"
-              }
-            })
-          }
-          if (user && remember) {
-            firebase
-              .auth()
-              .setPersistence(firebase.auth.Auth.Persistence.SESSION)
-              .then(() => {
-                dispatch({
-                  type: "LOGIN_WITH_EMAIL",
-                  payload: {
-                    email: userEmail,
-                    name,
-                    isSignedIn: loggedIn,
-                    remember: true,
-                    loggedInWith: "firebase"
-                  }
-                })
-              })
-          }
-          history.push("/")
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-}
 
 export const loginWithFB = () => {
   return dispatch => {
@@ -180,28 +130,8 @@ export const loginWithGithub = () => {
 }
 
 export const loginWithJWT = user => {
-  return dispatch => {
-    axios
-      .post("/api/authenticate/login/user", {
-        email: user.email,
-        password: user.password
-      })
-      .then(response => {
-        var loggedInUser
-
-        if (response.data) {
-          loggedInUser = response.data.user
-
-          dispatch({
-            type: "LOGIN_WITH_JWT",
-            payload: { loggedInUser, loggedInWith: "jwt" }
-          })
-
-          history.push("/")
-        }
-      })
-      .catch(err => console.log(err))
-  }
+  console.log('loginWithJWT',user)
+  return user;
 }
 
 export const logoutWithJWT = () => {

@@ -6,23 +6,58 @@ import { Mail, Lock, Check } from "react-feather"
 import { loginWithJWT } from "../../../../redux/actions/auth/loginActions"
 import { connect } from "react-redux"
 import { history } from "../../../../history"
+import axios from "axios";
+import {Alert} from "reactstrap";
+// import { useHistory } from "react-router-dom";
 
+// const history = useHistory();
 class LoginJWT extends React.Component {
   state = {
-    email: "demo@demo.com",
-    password: "demodemo",
-    remember: false
+    email: "",
+    password: "",
+    remember: false,
+    error : "",
   }
 
   handleLogin = e => {
     e.preventDefault()
-    console.log(this.state);
-    // this.props.loginWithJWT(this.state)
+    this.callApi();
   }
+
+  componentDidMount(){
+
+  }
+
+  callApi(){
+    console.log('calling api');
+    const {email, password} = this.state;
+    const base_url = "http://localhost:2000";
+     axios
+      .post(base_url + "/api/v1/auth/login", {
+        email: email,
+        password: password,
+        login_type : 'email',
+      })
+      .then(response => {
+        var loggedInUser
+        console.log(response);
+        if (response.data) {
+          loggedInUser = response.data.user
+          history.push("/profile");
+        }
+      })
+      .catch(err => {
+        this.setState({error : err.response.data.error})
+        console.log(err.response.data.error)
+      })
+  }
+
   render() {
+    const {error} = this.state;
     return (
       <React.Fragment>
         <CardBody className="pt-1">
+          {error !== "" &&  <Alert color="warning">{error}</Alert>}
           <Form action="/" onSubmit={this.handleLogin}>
             <FormGroup className="form-label-group position-relative has-icon-left">
               <Input
@@ -66,9 +101,10 @@ class LoginJWT extends React.Component {
               <Button.Ripple
                 color="primary"
                 outline
-                onClick={() => {
-                  history.push("/register")
-                }}
+                // onClick={() => {
+                //   history.push("/register")
+                // }}
+                href="/register"
               >
                 Register
               </Button.Ripple>

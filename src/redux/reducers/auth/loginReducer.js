@@ -1,4 +1,5 @@
 export const login = (state = { userRole: "admin" }, action) => {
+
   switch (action.type) {
     case "LOGIN_WITH_EMAIL": {
       return { ...state, values: action.payload }
@@ -26,6 +27,9 @@ export const login = (state = { userRole: "admin" }, action) => {
     }
     case "CHANGE_ROLE": {
       return { ...state, userRole: action.userRole }
+    }
+    case "LOGIN_FAILED" : {
+      return {...state, values : action.payload};
     }
     default: {
       return state
